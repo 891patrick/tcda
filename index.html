@@ -1,36 +1,97 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moja Strona</title>
-  <style>
-    body { font-family: Arial, sans-serif; }
-    header { background: #004080; color: white; padding: 10px; }
-    nav a { color: white; margin: 0 10px; }
-    .container { display: flex; }
-    .main { flex: 70%; padding: 10px; }
-    .sidebar { flex: 30%; background: #f4f4f4; padding: 10px; }
-  </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Najnowsze wiadomości i wydarzenia z polskiej piłki nożnej.">
+    <meta name="keywords" content="piłka nożna, Ekstraklasa, I Liga, transfery, kalendarz">
+    <title>Moja Strona Piłkarska</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: #004080; color: white; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 10px; text-decoration: none; }
+        nav a:hover { color: #ffcc00; text-decoration: underline; transition: color 0.3s ease; }
+        .logo { font-size: 24px; font-weight: bold; }
+        .social-icons { float: right; margin-top: 5px; }
+        .social-icons img { width: 20px; margin-left: 5px; }
+        .sidebar { background: #e0e0e0; padding: 10px; }
+        .main { padding: 10px; }
+        .right-sidebar { background: #e0e0e0; padding: 10px; }
+        .menu-list { list-style: none; padding: 0; }
+        .menu-list li { margin: 10px 0; }
+        .menu-list a { text-decoration: none; color: #004080; }
+        .menu-list a:hover { color: #ffcc00; }
+        .news-section h2 { color: #004080; }
+        .event { margin-bottom: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 10px; border-radius: 5px; }
+        .event img { margin-right: 10px; }
+        .search-form { max-width: 300px; float: right; margin-top: 10px; }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Moja Strona</h1>
-    <nav>
-      <a href="#">Strona główna</a>
-      <a href="#">O mnie</a>
-      <a href="#">Kontakt</a>
-    </nav>
-  </header>
-  <div class="container">
-    <div class="main">
-      <h2>Witaj na mojej stronie!</h2>
-      <p>To jest moja pierwsza strona internetowa. Możesz ją dostosować!</p>
-    </div>
-    <div class="sidebar">
-      <h3>Informacje</h3>
-      <p>Tutaj możesz dodać coś o sobie.</p>
-    </div>
-  </div>
+    <header>
+        <div class="logo">Moja Strona Piłkarska</div>
+        <nav>
+            <a href="/ekstraklasa">EKSTRAKLASA</a>
+            <a href="/i-liga">I LIGA</a>
+            <a href="/nizsze-ligi">NIŻSZE LIGI</a>
+            <a href="/szukaj">SZUKAJ</a>
+            <a href="/kontakt">KONTAKT</a>
+        </nav>
+        <div class="social-icons">
+            <a href="https://facebook.com"><img src="images/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://twitter.com"><img src="images/twitter-icon.png" alt="Twitter"></a>
+        </div>
+        <form class="search-form" action="/search" method="get">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Szukaj..." name="search">
+                <div class="input-group-append">
+                    <input type="submit" class="btn btn-primary" value="Szukaj">
+                </div>
+            </div>
+        </form>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <aside class="col-md-2 sidebar">
+                    <h3>2024/2025</h3>
+                    <ul class="menu-list">
+                        <li><a href="/">Strona główna</a></li>
+                        <li><a href="/skarb-ekstraklasy">Skarb Ekstraklasy</a></li>
+                        <li><a href="/skarb-i-ligi">Skarb I ligi</a></li>
+                        <li><a href="/sparingi-ekstraklasa">Sparingi – Ekstraklasa</a></li>
+                        <li><a href="/transfery-ekstraklasa">Transfery – Ekstraklasa</a></li>
+                        <li><a href="/transfery-zagraniczne">Transfery – zagraniczne</a></li>
+                        <li><a href="/kalendarz-ekstraklasa">Kalendarz Ekstraklasy</a></li>
+                    </ul>
+                </aside>
+                <div class="col-md-7 main">
+                    <div class="news-section">
+                        <h2>Wydarzenia w Polsce</h2>
+                        <div class="event">
+                            <img src="images/motor.png" alt="Motor Lublin" width="50">
+                            <strong>Motor zdobył trzy punkty w spotkaniu z Koroną 2:1</strong>
+                            <p>Szczegóły meczu...</p>
+                        </div>
+                        <div class="event">
+                            <img src="images/rakow.png" alt="Raków Częstochowa" width="50">
+                            <strong>Pavel Mochny na stałe w KS-u 1925</strong>
+                            <p>Szczegóły transferu...</p>
+                        </div>
+                    </div>
+                </div>
+                <aside class="col-md-3 right-sidebar">
+                    <h3>Kalendarium letniego 2025</h3>
+                    <div class="event">
+                        <p><strong>25. tydzień 2025:</strong> <img src="images/france-flag.png" alt="France" width="20"> K. Alt-Fana vs. <img src="images/spain-flag.png" alt="Spain" width="20"> L. Añorque</p>
+                    </div>
+                    <div class="event">
+                        <p><strong>25. tydzień 2025:</strong> <img src="images/france-flag.png" alt="France" width="20"> M. Akilouche vs. <img src="images/poland-flag.png" alt="Poland" width="20"> J. Ambruzewicz</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
